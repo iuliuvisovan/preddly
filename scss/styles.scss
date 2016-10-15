@@ -1,4 +1,34 @@
-.blurred {
-    color: green;
-    filter: blur(2px);
+@import 'colors';
+@import 'reset';
+
+body {
+    overflow-x: hidden;
 }
+
+.square-wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    .square {
+        box-sizing: border-box;
+        background: $primary;
+        border: 1px solid white;
+
+        @media all and (orientation: portrait) { 
+            height: 50vw;
+            width: 50vw;
+        }
+        @media all and (orientation: landscape) { 
+            height: 25vw;
+            width: 25vw;
+        }
+        @media (min-width: 1025px) and (orientation: landscape) { 
+            height: 20vw;
+            width: 20vw;
+        }
+    }
+}
+
