@@ -1,24 +1,56 @@
 html
     head
         title Preddly
-        link(rel="shortcut icon" href="img/favicon.ico" type="image/x-icon")
+        link(rel="shortcut icon", href="img/favicon.ico" type="image/x-icon")
         link(rel="icon" href="img/favicon.ico" type="image/x-icon")
+
+        //- Custom styles
         link(rel="stylesheet" href="css/styles.css")
+
+        //- Materialize
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css")
+        link(rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons")
+        
+
+        //- Custom font
+        link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700" )
+        
     body
         .square-wrapper
+            .square 
+                i.material-icons playlist_add_check
+                br
+                span My preds
             .square
+                i.material-icons view_array
+                span My leagues
             .square
+                i.material-icons tag_faces
+                span My friends
             .square
+                i.material-icons filter_hdr
+                span My ranks
             .square
+                i.material-icons person
+                br
+                span Profile
+            .square.disabled
+                img.main-logo(src="img/logo.png")
+            .square.disabled
             .square
+                i.material-icons settings
+                span Settings
             .square
+                i.material-icons play_circle_outline
+                span All matches
             .square
+                i.material-icons vpn_lock
+                span All leagues
             .square
+                i.material-icons people
+                span All players
             .square
-            .square
-            .square
-            .square
-            .square
-            .square
-            .square
-            .square
+                i.material-icons view_list
+                span All preds
+
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js")

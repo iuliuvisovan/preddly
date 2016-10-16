@@ -1,9 +1,7 @@
 @import 'colors';
 @import 'reset';
 
-body {
-    overflow-x: hidden;
-}
+// Square layout setup
 
 .square-wrapper {
     width: 100vw;
@@ -13,22 +11,132 @@ body {
     align-items: flex-start;
 
     .square {
-        box-sizing: border-box;
         background: $primary;
-        border: 1px solid white;
+        box-shadow: inset 5px 5px 79px 30px rgba(0,0,0,0.1);
+        overflow: visible;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-end;
+        cursor: pointer;
 
-        @media all and (orientation: portrait) { 
-            height: 50vw;
-            width: 50vw;
+        &:not(.disabled):hover {
+            box-shadow: inset 5px 5px 79px 30px rgba(0,0,0,0);
+
+            i {
+                opacity: 0.5;
+            }
+
+            span {
+                opacity: 0.85;
+            }
         }
-        @media all and (orientation: landscape) { 
-            height: 25vw;
-            width: 25vw;
+
+
+        i {
+            font-size: 16vw;
+            color: white;
+            opacity: 0.3;
+            display: block;
+            margin-bottom: 0;
+            border: 0vw solid transparent;
+
+            @media all and (orientation: portrait) { 
+                    font-size: 33vw;
+            }
         }
-        @media (min-width: 1025px) and (orientation: landscape) { 
-            height: 20vw;
-            width: 20vw;
+
+        span {
+            margin-bottom: 25px;
+            margin-top: -25px;
+            text-transform: uppercase;
+            font-size: 2.3vw;
+            color: white;
+            opacity: 0.65;
+
+             @media all and (orientation: portrait) { 
+                    font-size: 45px;
+            }
         }
     }
 }
 
+.square, img.main-logo {
+    @media all and (orientation: portrait) { 
+        height: calc(100vw / 2);
+        width: calc(100vw / 2);
+    }
+    @media all and (orientation: landscape) { 
+         height: calc(100vw / 4);
+        width: calc(100vw / 4);
+    }
+}
+
+
+
+.square:nth-of-type(1) {
+    background: $myPreds;
+    order: 1;
+}
+.square:nth-of-type(2) {
+    background: $myLeagues;
+    order: 2;
+}
+.square:nth-of-type(3) {
+    background: $myBuds;
+    order: 3;
+}
+.square:nth-of-type(4) {
+    background: $myRanks;
+    order: 4;
+}
+
+.square:nth-of-type(5) {
+    background: $myProfile;
+    order: 5;
+
+    @media all and (orientation: portrait) {
+        order: 8;
+    }
+}
+.square:nth-of-type(6) {
+    background: $primary;
+    order: 6;
+}
+.square:nth-of-type(7) {
+    background: $secondary;
+    order: 7;
+}
+.square:nth-of-type(8) {
+    background: $prefs;
+    order: 8;
+}
+.square:nth-of-type(9) {
+    background: $games;
+    order: 9;
+}
+.square:nth-of-type(10) {
+    background: $leagues;
+    order: 10;
+}
+.square:nth-of-type(11) {
+    background: $allPlayers;
+    order: 11;
+}
+.square:nth-of-type(12) {
+    background: $allPreds;
+    order: 12;
+}
+
+img.main-logo {
+    width: auto!important;
+    position: relative;
+
+
+    @media all and (orientation: portrait) { 
+        left: calc(25vw);
+    }
+    @media all and (orientation: landscape) { 
+        left: calc(12.5vw);
+    }
+}

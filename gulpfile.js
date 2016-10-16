@@ -23,7 +23,7 @@ gulp.task('jade', () => {
     gulp.src('./*.jade')
         .pipe(jade({
             pretty: true
-        }))
+        }).on('error', () => {}))
         .pipe(gulp.dest('./'))
         .pipe(browsersync.reload({stream:true}));
 });
